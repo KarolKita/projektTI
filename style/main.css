@@ -1,0 +1,557 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --col1: #2f3e46;
+    --col2: #354f52;
+    --col3: #52796f;
+    --col4: #84a98c;
+    --col5: #315e26;
+    --col6: #97cf8a;
+    --colFont: #ffffff;
+}
+
+@keyframes logo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    background-color: var(--col2);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f1f1f1;
+}
+
+/* NAGLOWEK */
+
+.header {
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 2px;
+    background-color: var(--col3);
+    border-bottom: 1px solid #000;
+    font-size: 1.2em;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin-left: 50px;
+}
+
+.logo i {
+    animation: logo 8s infinite linear;
+    font-size: 0.9em;
+}
+
+.logo i::before {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#logo-right {
+    text-transform: uppercase;
+    color: var(--col6);
+    font-weight: bold;
+}
+
+/* MENU BOCZNE */
+
+#menu {
+    display: none;
+}
+
+#menu i {
+    font-size: 30px;
+    transition: 1s;
+}
+
+#close-menu {
+    /* display: none; */
+    padding: 10px;
+    display: block;
+    font-size: 30px;
+}
+
+#nav-side {
+    display: block;
+    position: fixed;
+    z-index: 999;
+}
+
+/* NAWIGACJA */
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+nav ul li {
+    font-size: 1em;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f1f1f1;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+nav a:hover {
+    background-color: #f1f1f1;
+    color: var(--col3);
+    border-radius: 5px 5px 5px 25px;
+}
+
+/* STARTOWY OPIS */
+
+#start {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url("../img/tlo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s linear;
+    transition-delay: 1s;
+    text-align: center;
+}
+
+#start::after {
+    content: "";
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    z-index: -1;
+}
+
+#description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-image: linear-gradient(rgba(56, 54, 54, 0.7), rgb(0, 0, 0, 0.8));
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+#description > p {
+    margin: 10px 0 20px 0;
+    font-size: 25px;
+}
+
+#dane {
+    display: flex;  
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #f1f1f1;  
+    border-bottom: 5px solid var(--col3);
+    border-radius: 20px;
+    padding: 2px;
+}
+
+/* KONTENT STRONY */
+
+.content {
+    width: 70%;
+    margin: 0 auto; 
+    padding: 30px 10px;
+    background-color: var(--col2);
+    text-align: justify;
+    text-justify: inter-word;
+    border-bottom: 5px solid var(--col1);
+    line-height: 1.4;
+    font-size: 1.4em;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header-content i{
+    font-size: 20px;
+    margin-left: 10px;
+    gap: 10px;
+}
+
+/* O NAS */
+
+.grid-about-us {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.item-icons {
+    background-color: var(--col3);
+    padding: 10px;
+    text-transform: uppercase;
+    position: relative;
+    height: 100px;
+}
+
+.item-icons > img {
+    opacity: 0.1;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item-icons > p {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.content > ul {
+    margin-left: 30px;
+}
+
+/* KONTAKT I GODZINY OTWARCIA */
+
+.grid-contact-hours {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    justify-content: center;
+}
+
+.grid-contact-hours > div {
+    background-color: var(--col3);
+}
+
+.contact-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-data > div {
+    padding: 10px 0;
+    font-size: 1.1em;
+}
+
+.contact-data p {
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.grid-hours {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 20px;
+}
+
+.grid-hours .days {
+    text-align: end;
+}
+
+/* OFERTA */
+
+.grid-offer {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-offer ul {
+    margin-left: 15px;
+}
+
+/* TRASA */
+
+.maps {
+    width: 100%;
+    border: none;
+}
+
+.maps iframe {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.maps::after {
+    content: "";
+    height: 5px;
+    width: 80%;
+    background: var(--col1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* GALERIA */
+
+#galeria {
+    background-color: var(--col3);
+    padding-top: 0;
+
+}
+
+#galeria {
+    padding-top: 10px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+#photo {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 50vh;
+    width: 70vw;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.gallery i {
+    color: var(--col1);
+    font-size: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--col1);
+    transition: 1s;
+    margin: 10px;
+}
+
+.gallery i:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+#photo-container {
+    height: fit-content;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gallery-bottom {
+    width: 100%;
+    height: 20%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-bottom > img {
+    width: 20vh;
+    height: 10vh;
+    margin: 0 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+.gallery-bottom > img:hover {
+    border: 5px solid var(--col1);
+}
+
+#c0 { 
+    opacity: 1;
+}
+/* STOPKA */
+
+#footer {
+    width: 100%;
+    height: 50px;
+    background-color: var(--col1);
+    text-align: center;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    /* NAGLOWEK  */
+
+    .header {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    /* LOGO */
+
+    .logo {
+        margin: 10px;
+    }
+
+    /* MENU */
+    
+    #menu {
+        display: block;
+        font-size: 1.5em;
+        margin-right: 20px;
+    }
+
+    #menu i {
+        z-index: 9999;
+    }
+
+    /* NAWIGACJA */
+    
+    nav {
+        display: block;
+        position: fixed;
+        top: 10vh;
+        right: 0;
+        z-index: 1;
+        height: 100%;
+        width: 0;
+        background-color: var(--col3);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 2s;
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns: 100%;
+        margin: 0;
+    }
+
+    nav ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 100%;
+    }
+
+    nav ul li > a {
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+    }
+
+    nav ul li > a:hover {
+        background-color: #354f52;
+        border-radius: 0;
+        color: #f1f1f1;
+    }
+
+    /* KONTENt STRONY */
+
+    ul {
+        text-align: left;
+    }
+
+    .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* O NAS */
+
+    .grid-about-us {
+        grid-template-columns: 100%;
+    }
+
+    /* KONTAKT I GODZINY PRACA */
+
+    .grid-contact-hours {
+        grid-template-columns: 100%;
+    }
+
+    #contact {
+        width: 100%;
+    }
+
+    #hours {
+        grid-row-start: 3;
+    }
+
+    .contact-data {
+        align-items: flex-start;
+    }
+
+    .grid-hours .days {
+        text-align: center;
+    }
+    
+    /* OFERTA */
+
+    .grid-offer {
+        grid-template-columns: auto;
+    }        
+
+    /* TRASA */
+
+    .maps::after {
+        width: 100%;
+        padding: 0;
+    }
+
+    .maps {
+        padding: 0;
+    }
+
+    /* GALERIA */
+    
+    #galeria {
+        height: fit-content;
+    }   
+    
+    .gallery-bottom {
+        display: none;
+    }
+
+    .gallery i {
+        z-index: 999;
+    }
+
+    #photo {
+        width: 90vw;
+    }
+
+}
