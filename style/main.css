@@ -23,6 +23,15 @@
     }
 }
 
+@keyframes side-bar {
+    from {
+        width: 70%;
+    }
+    to {
+        width: 0;
+    }
+}
+
 body {
     background-color: var(--col2);
     font-family: Arial, Helvetica, sans-serif;
@@ -40,6 +49,10 @@ body {
     background-color: var(--col3);
     border-bottom: 1px solid #000;
     font-size: 1.2em;
+    transition: 0.7s ease-in-out;
+    position: sticky;
+    top: 0px;
+    z-index: 1111;
 }
 
 /* LOGO */
@@ -70,6 +83,10 @@ body {
 }
 
 /* MENU BOCZNE */
+
+.header i {
+    cursor: pointer;
+}
 
 #menu {
     display: none;
@@ -102,8 +119,8 @@ nav ul {
 }
 
 nav ul li {
-    font-size: 1em;
-    width: 150px;
+    font-size: 0.8em;
+    width: 120px;
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
@@ -113,7 +130,7 @@ nav a {
     text-decoration: none;
     color: #f1f1f1;
     padding: 10px 20px;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 nav a:hover {
@@ -153,7 +170,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     background-image: linear-gradient(rgba(56, 54, 54, 0.7), rgb(0, 0, 0, 0.8));
     border-radius: 10px;
 }
@@ -302,6 +319,7 @@ h3 {
 
 .grid-offer ul {
     margin-left: 15px;
+    text-align: left;
 }
 
 /* TRASA */
@@ -413,11 +431,22 @@ h3 {
 }
 
 @media screen and (max-width: 1200px) {
+
     /* NAGLOWEK  */
 
     .header {
         justify-content: space-between;
         padding: 0 10px;
+    }
+
+    /* O NAS */
+
+    #description  h1{
+        font-size: 1.4em;
+    }
+
+    #descriptom p {
+        font-size: 1.1em;
     }
 
     /* LOGO */
@@ -461,12 +490,11 @@ h3 {
         display: grid;
         grid-template-columns: 100%;
         margin: 0;
+        opacity: 0;
     }
 
     nav ul li {
         display: flex;
-        align-items: center;
-        justify-content: center;
         height: 50px;
         width: 100%;
     }
@@ -475,6 +503,7 @@ h3 {
         width: 100%;
         height: 100%;
         transition: 1s;
+        line-height: 1.5;
     }
 
     nav ul li > a:hover {
@@ -483,10 +512,11 @@ h3 {
         color: #f1f1f1;
     }
 
-    /* KONTENt STRONY */
+    /* KONTENT STRONY */
 
     ul {
         text-align: left;
+        transition: 1s ease-in-out;
     }
 
     .content {

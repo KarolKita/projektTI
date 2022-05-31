@@ -65,4 +65,26 @@ function showPhoto(nr){
     }
 }
 
+// pokazanie/chowanie nawigacji podczas skrolowania
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navigation").style.top = "0";
+  } else {
+    if (window.innerWidth <= 1200){
+        let nawigacja = document.getElementById("nav");
+        let lista = document.getElementById("nav-ul");
+        lista.style.opacity = 0;
+        nawigacja.style.width = 0;
+        document.getElementById("open-menu").style.display = "block";
+    }
+    setTimeout(function() {
+        document.getElementById("navigation").style.top = "-200px";
+    }, 1600);
+  }
+  prevScrollpos = currentScrollPos;
+}
+
 
